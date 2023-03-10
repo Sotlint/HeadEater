@@ -1,0 +1,116 @@
+﻿<Window x:Class="HeadEater.OReqInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HeadEater"
+        mc:Ignorable="d"
+          Title="HeadEater" Height="870" Width="688" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid   >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="39*"/>
+            <RowDefinition Height="698*"/>
+            <RowDefinition Height="47*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="321*"/>
+            <ColumnDefinition Width="326*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.ColumnSpan="2" Grid.Row="0" Content="Вакансия" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" FontFamily="Segoe UI Black" Foreground="White"  BorderBrush="Black" BorderThickness="0,0,0,1">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF8E2626" Offset="1"/>
+                    <GradientStop Color="#FFE81313" Offset="0"/>
+                </LinearGradientBrush>
+            </Label.Background>
+        </Label>
+
+        <ListBox x:Name="List_org" Panel.ZIndex="5" SelectionMode="Single" Focusable="False" BorderThickness="2,1,2,1" Margin="0,1,0,0" Grid.Row="1" >
+
+            <Label  Content="Организация:"   FontFamily="Verdana" FontSize="16"  />
+            <Label x:Name="lName"   FontFamily="Verdana" FontSize="16"  />
+            <Label  Content="Требуется:"   FontFamily="Verdana" FontSize="16"  />
+            <Label x:Name="lPosition"   FontFamily="Verdana" FontSize="16"  />
+            <Label  Content="Зарплата"   FontFamily="Verdana" FontSize="16"  />
+            <Label x:Name="lSalary"    FontFamily="Verdana" FontSize="16"  />
+            <Label  Content="Описание:"   FontFamily="Verdana" FontSize="16"  />
+            <TextBox x:Name="lDis"    FontFamily="Verdana" FontSize="16" Width="294" Height="206" IsReadOnly="True" TextWrapping="Wrap"   />
+            <Label  Content="E-mail"   FontFamily="Verdana" FontSize="16"  />
+            <Label x:Name="lMail"   FontFamily="Verdana" FontSize="16"  />
+            <Label  Content="Контактный телефон"   FontFamily="Verdana" FontSize="16"  />
+            <Label x:Name="lTelephone"    FontFamily="Verdana" FontSize="16"  />
+
+
+        </ListBox>
+
+        <ListBox x:Name="List_w" Panel.ZIndex="5" SelectionMode="Single" Focusable="False" BorderThickness="2,1,2,1" Grid.ColumnSpan="2" Margin="341,1,0,0" Grid.Row="1" >
+
+            <Label  Content="Имя:"   FontFamily="Verdana" FontSize="16"  />
+            <Label x:Name="lwName"   FontFamily="Verdana" FontSize="16"  />
+            <Label  Content="Фамилия:"   FontFamily="Verdana" FontSize="16"  />
+            <Label x:Name="lwSurname"   FontFamily="Verdana" FontSize="16"  />
+            <Label  Content="Отчество"   FontFamily="Verdana" FontSize="16"  />
+            <Label x:Name="lwPatronomic"    FontFamily="Verdana" FontSize="16"  />
+            <Label  Content="E-mail"   FontFamily="Verdana" FontSize="16"  />
+            <Label x:Name="lwMail"    FontFamily="Verdana" FontSize="16"  />
+            <Label  Content="Контактный телефон"   FontFamily="Verdana" FontSize="16"  />
+            <Label x:Name="lwTelephone"    FontFamily="Verdana" FontSize="16"  />
+            <Label  Content="Должность"   FontFamily="Verdana" FontSize="16"  />
+            <TextBox x:Name="lwPosition"  IsReadOnly="True"  FontFamily="Verdana" FontSize="16" Width="211"  />
+            <Label  Content="Зарплата"   FontFamily="Verdana" FontSize="16"  />
+            <TextBox x:Name="lwSalary"  IsReadOnly="True"  FontFamily="Verdana" FontSize="16" Width="211"  />
+
+            <Label  Content="Расскажите о себе:"   FontFamily="Verdana" FontSize="16"  />
+            <TextBox x:Name="lwDis"  IsReadOnly="True"  FontFamily="Verdana" FontSize="16" Width="294" Height="206" TextWrapping="Wrap"  />
+            <Button x:Name="Button_print"  Content="Печать" Grid.Row="2" Grid.Column="1" FontSize="18" FontFamily="Segoe UI" Foreground="White" Margin="2,2,2,2" BorderBrush="Black" Click="Button_printt" >
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF8E2626" Offset="1"/>
+                        <GradientStop Color="#FFE81313" Offset="0"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+        </ListBox>
+
+
+
+
+
+
+
+
+
+
+
+
+        <Button x:Name="Button_Ex"  Content="Назад" Grid.Row="2" FontSize="18" FontFamily="Segoe UI" Grid.ColumnSpan="2" Foreground="White" Margin="271,2,0,2" BorderBrush="Black" Click="Button_Ex_Click" HorizontalAlignment="Left" Width="146">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF8E2626" Offset="1"/>
+                    <GradientStop Color="#FFE81313" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="Button_del"  Content="Отклонить" Grid.Row="2" FontSize="18" FontFamily="Segoe UI" Foreground="White" Margin="10,2,0,2" BorderBrush="Black"  HorizontalAlignment="Left" Width="190" Click="Button_del_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF8E2626" Offset="1"/>
+                    <GradientStop Color="#FFE81313" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="Button_ch"  Content="Принять" Grid.Row="2" FontSize="18" FontFamily="Segoe UI" Foreground="White" Margin="147,2,0,2" BorderBrush="Black"  HorizontalAlignment="Left" Width="190" Grid.Column="1" Click="Button_ch_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF8E2626" Offset="1"/>
+                    <GradientStop Color="#FFE81313" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Window>

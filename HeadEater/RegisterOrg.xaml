@@ -1,0 +1,88 @@
+﻿<Window x:Class="HeadEater.RegisterOrg"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HeadEater"
+        mc:Ignorable="d"
+       Title="HeadEater"  Height="711" Width="365" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70*"  ></RowDefinition>
+            <RowDefinition Height="496*" ></RowDefinition>
+            <RowDefinition Height="65*" ></RowDefinition>
+            <RowDefinition Height="65*"/>
+
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="0" Grid.Row="0" Content="Регистрация" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" FontFamily="Segoe UI Black" Foreground="White"  BorderBrush="Black" BorderThickness="0,0,0,1">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF8E2626" Offset="1"/>
+                    <GradientStop Color="#FFE81313" Offset="0"/>
+                </LinearGradientBrush>
+            </Label.Background>
+        </Label>
+
+
+
+        <ListBox x:Name="List_Prof"   Grid.Row="1" Panel.ZIndex="5" SelectionMode="Single" Focusable="False" BorderThickness="2,1,2,1" >
+
+
+
+            <Label  Content="Данные для авторизации:"  FontFamily="Verdana" FontSize="16" HorizontalContentAlignment="Left" VerticalContentAlignment="Top"  />
+
+            <Label  Content="Логин"   FontFamily="Verdana" FontSize="16"  />
+            <TextBox x:Name="TextBox_Login"   Height="22"  Width="289" FontSize="16" FontFamily="Verdana" />
+            <Label  Content="Пароль"   FontFamily="Verdana" FontSize="16"  />
+            <TextBox x:Name="TextBox_Password"   Height="22"  Width="289" FontSize="16" FontFamily="Verdana" />
+
+            <Label  Content="Информация о организации:"  FontFamily="Verdana" FontSize="16" HorizontalContentAlignment="Left" VerticalContentAlignment="Top"  />
+            
+            <Label  Content="Название"   FontFamily="Verdana" FontSize="16"  />
+            <TextBox x:Name="TextBox_Name"   Height="22"  Width="289" FontSize="16" FontFamily="Verdana" />
+            <Label  Content="Описание"   FontFamily="Verdana" FontSize="16"  />
+            <TextBox x:Name="TextBox_Discription"   Height="150"  Width="289" FontSize="16" FontFamily="Verdana" TextWrapping="Wrap" />
+
+            <Label  Content="Контактные данные:"  FontFamily="Verdana" FontSize="16" HorizontalContentAlignment="Left" VerticalContentAlignment="Top"  />
+
+            <Label  Content="E-mail"  FontFamily="Verdana" FontSize="16"  />
+            <TextBox x:Name="TextBox_mail"   Height="22"  Width="289" FontSize="16" FontFamily="Verdana" />
+            <Label  Content="Телефон"   FontFamily="Verdana" FontSize="16"  />
+            <TextBox x:Name="TextBox_Telephone" Height="22"  Width="289" FontSize="16" FontFamily="Verdana" TextWrapping="Wrap" />
+            <Label  Content="Адрес"   FontFamily="Verdana" FontSize="16"  />
+            <TextBox x:Name="TextBox_Addres" Height="22"  Width="289" FontSize="16" FontFamily="Verdana" TextWrapping="Wrap" />
+
+        </ListBox>
+
+
+
+
+
+        <Button x:Name="Button_Entry"  Content="Завершить" Grid.Row="2" FontSize="18" FontFamily="Segoe UI" Foreground="White" Margin="2,2,2,2" BorderBrush="Black" Click="Button_Entry_Click"   >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF8E2626" Offset="1"/>
+                    <GradientStop Color="#FFE81313" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+
+        <Button x:Name="Button_Ex"  Content="Отмена" Grid.Row="3" FontSize="18" FontFamily="Segoe UI" Foreground="White" Margin="2,2,2,2" BorderBrush="Black" Click="Button_Ex_Click"   >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF8E2626" Offset="1"/>
+                    <GradientStop Color="#FFE81313" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+
+
+    </Grid>
+    
+    
+    
+    
+</Window>

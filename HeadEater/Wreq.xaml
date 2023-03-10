@@ -1,0 +1,68 @@
+﻿<Window x:Class="HeadEater.Wreq"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HeadEater"
+        mc:Ignorable="d"
+             Title="Headeater" Height="514" Width="434" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24*"/>
+            <RowDefinition Height="194*"/>
+            <RowDefinition Height="31*"/>
+        </Grid.RowDefinitions>
+
+
+        <Label Grid.Column="0" Grid.Row="0" Content="HeadEater" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24" FontFamily="Segoe UI Black" Foreground="White"  BorderBrush="Black"   >
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF8E2626" Offset="1"/>
+                    <GradientStop Color="#FFE81313" Offset="0"/>
+                </LinearGradientBrush>
+            </Label.Background>
+        </Label>
+
+        <ListBox x:Name="List_Vac"    Foreground="White" FontSize="16" FontFamily="Segoe UI" SelectionChanged="SC" Grid.Row="1"  >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <Label Content="Должность:"   FontSize="16" FontFamily="Segoe UI"/>
+                        <Label Content="{Binding Position}"   FontSize="16" FontFamily="Segoe UI"/>
+                        <Label Content="Оклад:"   FontSize="16" FontFamily="Segoe UI"/>
+                        <Label Content="{Binding Salary}"  FontSize="16" FontFamily="Segoe UI"/>
+
+                        <Button x:Name="BSelect" Content="Просмотр" Visibility="Hidden" Foreground="White" FontSize="16" FontFamily="Segoe UI" Click="select"   >
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF8E2626" Offset="1"/>
+                                    <GradientStop Color="#FFE81313" Offset="0"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                    </WrapPanel>
+
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding  RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" Value="True" >
+                            <Setter TargetName="BSelect" Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+
+                </DataTemplate>
+
+            </ListBox.ItemTemplate>
+
+        </ListBox>
+
+        <Button x:Name="Button_vac"  Content="Назад" Grid.Row="2" FontSize="18" FontFamily="Segoe UI" Foreground="White" Margin="2,2,2,2" BorderBrush="Black" Click="Button_vac_Click"    >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF8E2626" Offset="1"/>
+                    <GradientStop Color="#FFE81313" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Window>
